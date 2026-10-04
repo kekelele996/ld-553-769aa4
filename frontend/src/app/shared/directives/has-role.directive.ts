@@ -2,7 +2,7 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 import { UserRole } from '../constants/enums';
 import { AuthService } from '../services/auth.service';
 
-@Directive({ selector: '[appHasRole]' })
+@Directive({ standalone: false, selector: '[appHasRole]' })
 export class HasRoleDirective {
   constructor(private tpl: TemplateRef<unknown>, private vcr: ViewContainerRef, private auth: AuthService) {}
   @Input() set appHasRole(roles: UserRole[]) {

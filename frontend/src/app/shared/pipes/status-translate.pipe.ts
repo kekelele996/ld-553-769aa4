@@ -7,7 +7,7 @@ const labels: Record<string, string> = {
   UNPAID: '未支付', PAID: '已支付', REFUNDED: '已退款'
 };
 
-@Pipe({ name: 'statusTranslate' })
+@Pipe({ standalone: false, name: 'statusTranslate' })
 export class StatusTranslatePipe implements PipeTransform {
   transform(value: string | undefined): string { return value ? (labels[value] || value) : '-'; }
 }
